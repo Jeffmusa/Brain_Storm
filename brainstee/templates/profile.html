@@ -1,7 +1,7 @@
 {% extends 'base.html'%} {% load bootstrap4 %} {% load staticfiles %} {{form.media}} {% block content %}
 <a href="/logout" class="btn btn-outline-danger btn-lg" style="text-decoration:none;">Logout</a>
 <div class="text-right">
-  <div class="text"><button class='btn btn-outline-success' data-toggle="modal" data-target="#profile"> Edit profile</button></div>
+  <div class="text"><button class='btn btn-success' data-toggle="modal" data-target="#profile"> Edit profile</button></div>
 </div>
 <div class="modal fade" id="profile" role="dialog">
   <div class="modal-dialog">
@@ -17,7 +17,6 @@
       <div class="modal-body">
         <form action="{%url 'profile'%}" method="post" enctype="multipart/form-data">
           {%csrf_token%} {% bootstrap_form image_form %}
-          <strong><em><p style="color:green">N/B:You will only contribute to the neighbourhood you join here</p></em></strong>
           <input type="submit" class="btn btn-outline-primary" value="Post">
         </form>
 

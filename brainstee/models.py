@@ -18,3 +18,20 @@ class Profile(models.Model):
 
     def delete_profile(self):
         self.delete()
+
+
+class Seek(models.Model):
+    seekhelp = models.CharField(max_length =130,null=True)
+    user = models.ForeignKey(User, null=True)
+    
+
+class Help(models.Model):
+    helpout = models.CharField(max_length =130,null=True)
+    user = models.ForeignKey(User, null=True)
+    seek = models.ForeignKey(Seek,related_name='help',null=True)
+
+
+class Idea(models.Model):
+    idea = models.CharField(max_length =130,null=True)
+    user = models.ForeignKey(User, null=True)
+    

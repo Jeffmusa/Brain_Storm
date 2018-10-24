@@ -1,0 +1,18 @@
+{% extends 'base.html'%} {% load bootstrap4 %} {% load staticfiles %} {{form.media}}
+
+ {% block content %} {{ block.super }}
+ <br><br>
+ <div class="container">
+     {% for seek in seek %}
+     <a href="/profiles/{{seek.user.id}}/{{seek.user.username}}">{{seek.user.username}} </a>  {{seek.seekhelp}}
+     {% endfor %}
+     <h2>
+
+         <form action="{%url 'seek'%}" method="post" enctype="multipart/form-data">
+            {%csrf_token%} 
+            {% bootstrap_form post_form %}
+            <input type="submit" class="btn btn-success btn-lg" value="Post">
+        </form>
+    </h2>
+</div>
+{% endblock %}

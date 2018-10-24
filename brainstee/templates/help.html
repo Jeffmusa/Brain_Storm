@@ -1,0 +1,13 @@
+
+
+{% extends 'base.html'%} {% load bootstrap4 %} {% load staticfiles %} 
+{{ block.super }}
+{% block content %} 
+<h2>
+            <form action="{%url 'helpout'%}" method="post" enctype="multipart/form-data">
+           {%csrf_token%} 
+           {% bootstrap_form help_form %}
+           <input type="submit" class="btn btn-success btn-lg" value="Post">
+       </form>
+   </h2>
+   {% endblock %}
