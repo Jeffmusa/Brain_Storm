@@ -1,18 +1,65 @@
-{% extends 'base.html'%} {% load bootstrap4 %} {% load staticfiles %} {{form.media}}
+{% extends 'base.html'%} {% load bootstrap4 %} {% load staticfiles %} {% block content %} {{ block.super }}
+<br><br>
+<div class="container" style="color:white">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card-footer">
+                <h3>Hi {{user.username | title}},</h3>
+                <h4>
+                    We are happy to have you here.Its our pleasure to meet you.
+                </h4>
+                <h4>
+                    Hope its a pleasure for you to meet us too
+                </h4>
+                <h5>
+                    We are here because of you
+                </h5>
+                <!-- {% for seek in seek %}
+                <a href="/profiles/{{seek.user.id}}/{{seek.user.username}}">{{seek.user.username}} </a> {{seek.seekhelp}}
+                {% endfor %} -->
+                <h2>
 
- {% block content %} {{ block.super }}
- <br><br>
- <div class="container">
-     {% for seek in seek %}
-     <a href="/profiles/{{seek.user.id}}/{{seek.user.username}}">{{seek.user.username}} </a>  {{seek.seekhelp}}
-     {% endfor %}
-     <h2>
+                    <form action="{%url 'seek'%}" method="post" enctype="multipart/form-data">
+                        {%csrf_token%} {% bootstrap_form post_form %}
+                        <input type="submit" class="btn btn-success btn-lg" value="Post">
+                    </form>
+                </h2>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <h2>Community members</h2>
+                {% for user in users %}
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
 
-         <form action="{%url 'seek'%}" method="post" enctype="multipart/form-data">
-            {%csrf_token%} 
-            {% bootstrap_form post_form %}
-            <input type="submit" class="btn btn-success btn-lg" value="Post">
-        </form>
-    </h2>
+                                <img  width="240" height="170" src="{{user.user.profile.pro_photo.url}}" alt="Profile picture">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-footer">
+
+                               <h1>
+
+                               <a href="/profiles/{{user.user.id}}/{{user.user.username}}" style="color:white"> {{user.user}}</a>
+                            </h1> 
+                            <hr>
+                            <br>
+                                <h4>Location:{{user.location | title}}</h4>
+<br><br>
+                              
+                                <h4>{{user.bio}}</h4>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

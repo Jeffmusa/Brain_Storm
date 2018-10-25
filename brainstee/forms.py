@@ -19,7 +19,7 @@ class SeekForm(forms.ModelForm):
     class Meta:
         model = Seek
         exclude =  []
-        fields = ['seekhelp',]
+        fields = ['what_do_you_do','which_skills_do_you_have','seek_help']
 
 class HelpForm(forms.ModelForm):
     class Meta:

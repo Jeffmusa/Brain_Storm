@@ -83,6 +83,7 @@ def profiles(request,id):
     return render(request,'profiles.html',{"profile":profile})
 
 def seek(request):
+    users = Profile.objects.all()
     seek = Seek.objects.all()
     # neighbourhood = request.user.profile.neighbourhood
     if request.method == 'POST':
@@ -97,9 +98,10 @@ def seek(request):
 
     else:
         post_form = SeekForm()
-    return render(request, 'seek.html', {"post_form": post_form,"seek":seek })
+    return render(request, 'seek.html', {"post_form": post_form,"seek":seek,"users":users })
 
 def helpout(request):
+    posts = Seek.objects.all()
     # seek = request.user.profile.seek
     if request.method == 'POST':
         help_form = HelpForm(request.POST, request.FILES)
@@ -113,4 +115,4 @@ def helpout(request):
 
     else:
         help_form = HelpForm()
-    return render(request, 'help.html', {"help_form": help_form })
+    return render(request, 'help.html', {"help_form": help_form,"posts":posts })

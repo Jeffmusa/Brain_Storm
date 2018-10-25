@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 class Profile(models.Model):
-    pro_photo = models.ImageField(upload_to = 'images/',null=True)
+    pro_photo = models.ImageField(upload_to = 'images/',blank=True)
     name = models.CharField(max_length =30,null=True)
     location = models.CharField(max_length =30,null=True)
     email = models.EmailField(max_length =50,null=True)
@@ -21,7 +21,9 @@ class Profile(models.Model):
 
 
 class Seek(models.Model):
-    seekhelp = models.CharField(max_length =130,null=True)
+    what_do_you_do = models.TextField(max_length =130,null=True)
+    which_skills_do_you_have = models.CharField(max_length =130,null=True)
+    seek_help = models.CharField(max_length =130,null=True)
     user = models.ForeignKey(User, null=True)
     
 

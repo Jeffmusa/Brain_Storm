@@ -3,11 +3,34 @@
 {% extends 'base.html'%} {% load bootstrap4 %} {% load staticfiles %} 
 {{ block.super }}
 {% block content %} 
-<h2>
-            <form action="{%url 'helpout'%}" method="post" enctype="multipart/form-data">
-           {%csrf_token%} 
-           {% bootstrap_form help_form %}
-           <input type="submit" class="btn btn-success btn-lg" value="Post">
-       </form>
-   </h2>
-   {% endblock %}
+<div class="container">
+
+    {% if posts %}
+    <div class="card-footer">
+        
+        {% for post in posts %}
+        <h3 style="color:white;">Hi,my name is <a href="/profiles/{{post.user.id}}/{{post.user.username}}" style="color:turquoise">{{post.user}}</a></h3>
+    <h3 style="color:white;">
+            <p>  {{post.what_do_you_do}}</p>
+            <p>{{post.which_skills_do_you_have}}</p>
+            {{post.seek_help}}
+        </h3>
+        <h2 style="color:white">
+        <form action="{%url 'helpout'%}" method="post" enctype="multipart/form-data">
+            {%csrf_token%} 
+            {% bootstrap_form help_form %}
+            <input type="submit" class="btn btn-success btn-lg" value="Help {{post.user}}">
+        </form>
+    </h2>
+    {% endfor %}
+</div>
+
+
+{% else %}
+<div class="text-center">
+    <h1 style="color:snow">No help requests yet</h1>
+</div>
+{% endif %}
+
+</div>
+{% endblock %}

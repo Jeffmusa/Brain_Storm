@@ -1,19 +1,283 @@
-{% extends 'base.html'%} {% load bootstrap4 %} {% load staticfiles %} 
-{{ block.super }}
-{% block content %} 
-<div class="home"></div>
+{% extends 'base.html'%} {% load bootstrap4 %} {% load staticfiles %} {{ block.super }} {% block content %}
+<div class="home">
 
 
+</div>
+<div class="container">
+
+</div>
+{% if user.profile.email %} {% else %} New here? You can create a profile >> <a href="/profile/{{user.username}}">here</a>
+{% endif %}
+
+<div class="PC">
+    <div class="flex-container-f">
+        <div style="flex-grow: 1">
+            <div style="height:25px;"></div>Brain_storm.net 2018<br><a href="#">Don't panic</a></div>
+        <div style="flex-grow: 3"></div>
+        <div style="flex-grow: 4">
+
+
+
+            <div class="flex-containerin-flex">
+                <div style="flex-grow: 1"><a href="https://www.instagram.com/jeffreylamar777" target="_blank"><img src="https://diylogodesigns.com/wp-content/uploads/2016/05/instagram-Logo-PNG-Transparent-Background-download-768x768.png"
+                            class="instagramicon"></a></div>
+                <div style="flex-grow: 1"><a href="https://www.twitter.com/jeffreylamar9" target="_blank"><img src="http://beta.jakobhd.de/twitter_icon.png"
+                            class="twittericon"></a></div>
+                <div style="flex-grow: 1"><a href="mailto:jeffmusa05@gmail.com"><img src="http://www.stickpng.com/assets/images/584856bce0bb315b0f7675ad.png"
+                            class="mailicon"></a></div>
+                <div style="flex-grow: 1"><a href="https://www.facebook.com/Jeff Brathake Swat" target="_blank"><img src="https://verveortho.com/wp-content/uploads/2017/10/fbicon.png"
+                            class="tsicon"></a></div>
+                <div style="flex-grow: 1"><a href="#" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_gray-512.png"
+                            class="dcicon"></a></div>
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+        <div style="flex-grow: 4"></div>
+        <div style="flex-grow: 1">
+            <div style="height:20px;"></div><a href="#">Jeff</a> <br><a href="#">Musa</a></div>
+
+    </div>
+</div>
+
+
+
+
+<div class="Mobile">
+    <div class="flex-containerin-flex1"><br>
+        <div style="flex-grow: 1"><a href="https://www.instagram.com/jeffreylamar777" target="_blank"><img src="https://diylogodesigns.com/wp-content/uploads/2016/05/instagram-Logo-PNG-Transparent-Background-download-768x768.png"
+                    class="twittericon"></a></div>
+        <div style="flex-grow: 1"><a href="https://www.twitter.com/jeffreylamar9" target="_blank"><img src="http://beta.jakobhd.de/twitter_icon.png"
+                    class="twittericon"></a></div>
+        <div style="flex-grow: 1"><a href="mailto:jeffmusa05@gmail.com"><img src="http://www.stickpng.com/assets/images/584856bce0bb315b0f7675ad.png"
+                    class="mailicon"></a></div>
+        <div style="flex-grow: 1"><a href="https://www.facebook.com/Jeff Brathake Swat" target="_blank"><img src="https://verveortho.com/wp-content/uploads/2017/10/fbicon.png"
+                    class="tsicon"></a></div>
+        <div style="flex-grow: 1"><a href="#" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_gray-512.png"
+                    class="dcicon"></a></div>
+
+    </div>
+
+    <div style="background-color:#070303;color:white;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;text-align:center;"><br>
+        <a href="#">Jeff &nbsp; &nbsp; &nbsp;</a><a href="#">Musa</a><br><br></div>
+
+
+</div>
+<div class="bottom-bar" style="background-color:black;color: white">
+    <div class="text-center">
+        <h5>
+
+            All Rights Reserved © 2018 | <a href="">Privacy Policy</a> | <a href="">Terms of Service</a>
+        </h5>
+    </div>
+</div>
 <style>
+    .home {
+        width: 100%;
+        height: 100vh;
+        background-color: chocolate;
+        background-image: url(https://it.umd.edu/sites/divisionofit.umd.edu/files/spotlight4.png);
+        background-position: center top;
+        background-size: cover;
+    }
 
-.home {
-    width: 100%;
-    height: 100vh;
-    background-color: chocolate;
-    /* background-image: url(https://images.unsplash.com/photo-1517442759247-7bb32e7d9a12?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=356cca728b9a1df317592eefddc8d0e2&auto=format&fit=crop&w=500&q=60); */
-    background-position: center top;
-	background-size:cover;
-}
+    @media only screen and (max-width: 960px) {
+        .home {
+            
+            background-color: chocolate;
+            background-image: url(https://catjohnson.co/wp-content/uploads/2015/06/Unsplash.png);
+            background-position: center top;
+            background-size: cover;
+        }
+    }
 
+    .flex-container-f {
+        display: flex;
+        align-items: stretch;
+        background-color: #050404;
+    }
+
+    .flex-container-f>div {
+        text-align: center;
+        color: white;
+        width: 100px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 13px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .flex-containerin-flex {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .flex-containerin-flex>div {
+        color: white;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+    }
+
+    .instagramicon {
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+        padding: 5px;
+    }
+
+    .instagramicon:hover {
+        border-radius: 30px;
+        background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+        padding: 5px;
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+    }
+
+    .dcicon {
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+        padding: 5px;
+    }
+
+    .dcicon:hover {
+        border-radius: 30px;
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+        padding: 5px;
+        background: #7289DA;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
+    a:hover {
+        color: lightgrey;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
+    .mailicon {
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+        padding: 5px;
+    }
+
+    .mailicon:hover {
+        border-radius: 30px;
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+        padding: 5px;
+        background: lightcoral;
+    }
+
+    .twittericon {
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+        padding: 5px;
+    }
+
+    .twittericon:hover {
+        border-radius: 30px;
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+        padding: 5px;
+        background: #1da1f2;
+    }
+
+
+    .tsicon {
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+        padding: 5px;
+    }
+
+    .tsicon:hover {
+        border-radius: 30px;
+        width: 50px;
+        height: 50px;
+        transition: 0.2s;
+        padding: 5px;
+        background: #2580c3;
+    }
+
+
+
+    .PC {
+        display: block;
+        width: 100%;
+        height: auto;
+        visibility: visible;
+
+    }
+
+    .Mobile {
+        display: none;
+        width: 0%;
+        height: 0%;
+        visibility: collapse;
+    }
+
+    @media only screen and (max-width: 960px) {
+
+        .PC {
+            display: none;
+            width: 0%;
+            height: 0%;
+            visibility: collapse;
+        }
+
+        .Mobile {
+            display: block;
+            width: 100%;
+            height: auto;
+            visibility: visible;
+
+        }
+    }
+
+    .flex-containerin-flex1 {
+        display: flex;
+        align-items: stretch;
+        background-color: #020000;
+    }
+
+    .flex-containerin-flex>div {
+        color: white;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+    }
 </style>
-{% endblock %} 
+{% endblock %}
